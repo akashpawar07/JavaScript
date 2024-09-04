@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 90vh;
+            border: 5px dashed green;
+        }
+        .child{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid red;
+            background:  rgba(0, 0, 128, 0.575);
+            width: 50vw;
+            height: 30vh;
+            height: 40vh;
+        }
+        #btn1, #btn2{
+            cursor: pointer;
+            width: 55%;
+        }
+        #btn1:active{
+            background-color: rgb(10, 56, 10);
+            color: #fff;
+            outline: none;
+            border: 1px solid gray;
+            font-weight: bold;
+        }
+        #btn2:active{
+            background-color: red;
+            color: #fff;
+            outline: none;
+            border: 1px solid gray;
+            font-weight: bold;
+        }
+        input{
+            width: 80%;
+            font-size: 16px;
+            padding: 10px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        input:focus{
+            box-shadow: 0px 0px 2px 2px #2d5bba;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="child">
+            <input type="text" id="input" placeholder="Enter the Number"><br><br>
+            <input type="text" name="" id="display" readonly><br><br>
+            <!-- <button type="submit" onclick="myFunc()">Find</button> -->
+            <input type="submit" name="" id="btn1" value="Find" onclick="myFunc()">
+            <input type="submit" name="" id="btn2" value="clear" onclick="clearFunc()">
+        </div>
+        <div>
+            <p>Name: Akash Shivram Pawar</p>
+            <p>Roll No: 2637</p>
+        </div>
+    </div>
+</body>
+<script>
+    function myFunc(){
+        var num = document.getElementById("input").value;
+        var result = document.getElementById("display");
+        if (num == 1){
+            document.getElementById('display').value= `${num} is neither a prime  nor composite number`
+        }else if(num> 1){
+            if(num % 2 == 0){
+                document.getElementById('display').value = `${num} Is not a prime number`
+            }else {
+                document.getElementById('display').value = `${num} Is a Prime Number`
+            }
+        }else if(mum < 1){
+            document.getElementById('display').value = `${num} Number must be greater than 1`
+        }
+    }
+    function clearFunc(){
+        document.getElementById("input").value = "";
+        document.getElementById('display').value = "";
+    }
+</script>
+</html>

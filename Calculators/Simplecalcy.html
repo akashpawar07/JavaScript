@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calcy</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            width: 1170px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 300px;
+            border-radius: 9px;
+            border: 4px solid rgb(78, 75, 75);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Geneva, Tahoma, sans-serif;
+        }
+        input{
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: #dfd7d7;
+        }
+        button{
+         padding: 10px;
+         border-radius: 5px;
+         color: white;
+         background-color: rgb(6, 133, 55);
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         text-transform:uppercase;
+        }
+        select{
+            padding: 6px;
+            font-size: 24px;
+            border-radius: 5px;
+            background-color: #dfd7d7;
+        }
+       @media only screen and (min-width:200px) and (max-width:414px){
+        body{
+            background-color: rgb(152, 143, 143);
+        }
+        h2{
+            color: white;
+            font-size: 1.5em;
+        }
+        .container{ 
+            width: 310px;
+            border: 4px solid white;
+        }
+        button{
+            background-color: #dfd7d7;
+            color: black;
+        }
+       }
+    </style>
+</head>
+
+<body>
+    <center><h2>Simple Calculator &downarrow;</h2></center>
+    <div class="container">
+        <input type="number" name="first" id="first">
+        <select name="" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">X</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" name="second" id="second"><br><br>
+        <button onclick="cal()">Evaluate</button>
+        <input type="text" id="result" placeholder="0" readonly="">
+    </div>
+
+
+</body>
+<script>
+    function cal() {
+        var oper1 = document.getElementById('first').value;
+        var oper2 = document.getElementById('second').value;
+        var operator = document.getElementById('operator').value;
+
+        if (operator == '+') {
+            var result = parseInt(oper1) + parseInt(oper2);
+        }
+
+        else if (operator == '-') {
+            var result = parseInt(oper1) - parseInt(oper2);
+        }
+
+        else if (operator == '*') {
+            var result = parseInt(oper1) * parseInt(oper2);
+        }
+
+        else if (operator == '/') {
+            var result = parseInt(oper1) / parseInt(oper2);
+        }
+
+        else if (operator == '%') {
+            var result = parseInt(oper1) % parseInt(oper2);
+        }
+
+        document.getElementById('result').value = result;
+
+    }
+</script>
+
+</html>

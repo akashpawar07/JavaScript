@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt calcy</title>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+
+    var operator = prompt("chose any one + - / * % ");
+    var number1 = prompt("Enter Number1");
+    var number2 = prompt("Enter Number2");
+     
+    if (operator == '+') {
+        result = (parseIn(number1)+(number2))
+    } else if (operator == '-') {
+        result = (parseInt(number1)-(number2))
+    } else if (operator == '/') {
+        result = (parseFloat(number1)/(number2))
+    } else if (operator == '*') {
+        result = (parseInt(number1)*(number2))
+    } else if (operator == '%') {
+        result = (parseInt(number1)%(number2))
+    }
+    document.getElementById('result').innerHTML = result;
+
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emailVal</title>
+</head>
+<body>
+        <label for="" id="email-label">Email</label>
+        <input type="email" spellcheck="false" id="email-field" onkeyup="eamilFun()">
+        <span id="email-error"></span>
+    
+</body>
+<script>
+var label = document.getElementById("email-label");
+var emailField = document.getElementById("email-field");
+var eError = document.getElementById("email-error");
+
+function eamilFun(){
+   if(!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    eError.innerHTML = "*Enter valid email"
+    eError.style.color="red";
+    return false;
+   }
+   eError.innerHTML = "";
+   return true;
+}
+</script>
+</html>

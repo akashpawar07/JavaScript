@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(94, 93, 93);
+}
+.container {
+    width: 310px;
+    padding: 7px 0px;
+    margin: 20vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(65, 65, 67);
+    justify-content: space-evenly;
+}
+h2{
+    color:white;
+    margin-top: 30px;
+    margin-bottom: -40px;
+    text-align: center;
+}
+form input{
+    width: 60px;
+    padding:10px;
+    margin: 3px;
+    font-size: 1.2em;
+    border-radius: 5px ;
+    border: 2px solid rgb(254, 247, 247);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+form input:active{
+    background-color: grey;
+    color: white;
+}
+.item1{
+    display: flex;
+    text-align: right;
+    width: 270px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 3em;
+    font-family: serif;
+    outline: none;
+    color: rgb(89, 86, 90);
+    cursor: text;
+}
+#equalto{
+    width: 130px;
+    padding:10px;
+    margin: 3px;
+    font-size: 1.2em;
+    border-radius: 5px ;
+    outline: none;
+    border: 0;
+    background-color: rgb(223, 105, 27);
+    color: white;
+    cursor: pointer;
+}
+.operators{
+    color: rgb(214, 28, 15);
+}
+
+
+@media only screen and (min-width:200px) and (max-width:414px){
+    body{
+        /* background-color: rgb(139, 47, 166); */
+    }
+    .container{
+        border: 2px solid red;
+        background-color: rgb(215, 176, 207);
+    }
+    .item{
+        background-color: rgb(115, 15, 92);
+    }
+    .item-last{
+        background-color:rgb(115, 15, 92) ;
+    }
+}

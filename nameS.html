@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Name Shortner</h1>
+    <input type="text" name="demo" id="demo" placeholder="Enter name ">
+
+    <input type="button" name="" value="Check" onclick="nameShortner()">
+
+    <p class="result">Hii</p>
+
+    <!-- <script src="nameShortner.js"></script> -->
+    <script>
+        let x = document.getElementById('demo').value;
+        function nameShortner(nam, maxLength) {
+            if (!nam) {
+                document.getElementsByClassName('result')[0].innerHTML = "sorry!";
+                return;
+            } else if (nam.length > maxLength) {
+                return nam.substring(0, maxLength) + "...";
+            }
+            return nam;
+        }
+
+        let newNam = nameShortner(x, 8);
+        console.log(newNam);
+        document.getElementsByClassName('result')[0].innerHTML = newNam;
+
+    </script>
+</body>
+
+</html>

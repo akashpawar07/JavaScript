@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormValidation</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-form">
+            <form onsubmit="return validation()" method="post">
+                <div class="form-item">
+                    <div for="">Name :</div>
+                    <input type="text" id="name" autocomplete="off">
+                    <span id="name-error"></span>
+                </div>
+                <div class="form-item">
+                    <div>Phone :</div>
+                    <input type="text" id="fphone" autocomplete="off">
+                    <span id="phone-error"></span>
+                </div>
+                <div class="form-item">
+                    <div>Email :</div>
+                    <input type="email" spellcheck="false" id="email-field" onkeyup="eamilFun()">
+                    <span id="email-error"></span>
+                </div>
+
+                <div class="form-item">
+                    <div>Password :</div>
+                    <input type="text" id="password" autocomplete=" off">
+                    <span id="pass-error"></span>
+                </div>
+                <div class="form-item">
+                    <div>Confirm Password :</div>
+                    <input type="text" id="confpassword" autocomplete="off">
+                    <span id="confpass-error"></span>
+                </div><br>
+                <input type="submit" name="" id="btn" value="submit">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+
+    function validation() {
+        var name = document.getElementById("name").value;
+        var number = document.getElementById("fphone").value;
+        var email = document.getElementById("email-field");
+        var pswd = document.getElementById("password").value;
+        var confirmpassword = document.getElementById("confpassword").value;
+
+
+        if (name == "") {
+            document.getElementById("name-error").innerHTML = "*Name should not be Empty!";
+            document.getElementById("name-error").style.color = "red";
+            return false;
+        } if (!isNaN(name)) {
+            document.getElementById("name-error").innerHTML = "*Charactres only!";
+            document.getElementById("name-error").style.color = "red";
+            return false;
+        }
+        if ((name.length < 3) || (name.length > 15)) {
+            document.getElementById("name-error").innerHTML = "*Name should be in between 3 to 15 char!";
+            document.getElementById("name-error").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("name-error").innerHTML = "";
+        }
+
+
+        if (number == "") {
+            document.getElementById("phone-error").innerHTML = "*It should not be empty!";
+            document.getElementById("phone-error").style.color = "red";
+            return false;
+
+        } if ((number.length < 10) && (number.length > 10)) {
+            document.getElementById("phone-error").innerHTML = "*Enter 10 digits Number!";
+            document.getElementById("phone-error").style.color = "red";
+            return false;
+
+        } if ((number.charAt(0) != '9') && (number.charAt(0) != '8') && (number.charAt(0) != '7')) {
+            document.getElementById("phone-error").innerHTML = "*Number start with 9, 8, 7";
+            document.getElementById("phone-error").style.color = "red";
+            return false;
+        }
+        if (isNaN(number)) {
+            document.getElementById("phone-error").innerHTML = "*Digit Only!";
+            document.getElementById("phone-error").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("phone-error").innerHTML = "";
+        }
+
+
+        // if (email == "") {
+        //     document.getElementById("email-error").innerHTML = "*it should not be enpty!";
+        //     document.getElementById("email-error").style.color = "red";
+        //     return false;
+        // }
+        // if (email.indexOf("@") <= 0) {
+        //     document.getElementById("email-error").innerHTML = "*Should not start woth @"
+        //     document.getElementById("email-error").style.color = "red";
+        //     return false;
+        // } if ((email.charAt(email.length - 3) != '.') && (email.charAt(email.length - 4) != '.')) {
+        //     document.getElementById("email-error").innerHTML = "*(.)Invalid position!";
+        //     document.getElementById("email-error").style.color = "red";
+        //     return false;
+        // } else {
+        //     document.getElementById("email-error").innerHTML = "";
+        // }
+
+
+        if (pswd == "") {
+            document.getElementById("pass-error").innerHTML = "*It should not be empty!"
+            document.getElementById("pass-error").style.color = "red"
+            return false;
+        } if ((pswd.length < 3) || (pswd.length > 15)) {
+            document.getElementById("pass-error").innerHTML = "*Password should be in range of 3 to 15 char!";
+            document.getElementById("pass-error").style.color = "red";
+            return false;
+        } else {
+            document.getElementById("pass-error").innerHTML = "";
+
+        }
+
+        if (confirmpassword == "") {
+            document.getElementById("confpass-error").innerHTML = "*It should not be empty!"
+            document.getElementById("confpass-error").style.color = "red";
+            return false;
+        } if (confirmpassword != pswd) {
+            document.getElementById("confpass-error").innerHTML = "*Password is not match!";
+            document.getElementById("confpass-error").style.color = "red";
+            return false;
+        } if (confirmpassword == pswd) {
+            document.getElementById("confpass-error").innerHTML = "*Password has match!";
+            document.getElementById("confpass-error").style.color = "darkgreen";
+            return false;
+        } else {
+            document.getElementById("confpass-error").innerHTML = "";
+
+        }
+
+        return true;
+    }
+
+    var eError = document.getElementById("email-error");
+    function emailFun() {
+        if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+            eError.innerHTML = "*Enter valid email"
+            eError.style.color = "red";
+            return false;
+        }
+        eError.innerHTML = "";
+        return true;
+    }
+
+</script>
+
+</html>

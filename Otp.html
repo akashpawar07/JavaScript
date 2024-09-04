@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp generator</title>
+</head>
+<body>
+    <h1 id="get-otp">...</h1>
+    <button onclick="OTP()">Generate otp</button>
+</body>
+<script>
+    let a = document.querySelector('#get-otp');
+
+    function OTP(){
+        let opt = ""
+        opt = Math.random()*9000
+        return a.innerHTML = Math.floor(1000 + opt)
+    }
+    console.log(`Your OTP is : ${OTP()}`)
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varibles</title>
+    <style>
+        h1 {
+            background-color: bisque;
+            color: rgb(71, 24, 3);
+            border: 2px solid black;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .para {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #btn {
+            /* background-color: rgb(78, 149, 106); */
+            /* color: rgb(0, 0, 0);
+            border: 2px solid rgb(8, 4, 4); */
+            /* height: 50px; */
+            /* border-radius: 10px; */
+            /* font-size: 18px; */
+            font-family: serif;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript function </h1><br>
+    
+    <input type="text" name="name" id="name">
+    <button onclick="myFunction()">Click here</button><br>
+    <div class="show">
+
+    </div>
+</body>
+<script>
+
+    function myFunction(){
+        var name = document.getElementById('name').value;
+        document.getElementsByClassName('show')[0].innerHTML= "Welcome In Coding Wolrd :" + name;
+    }
+
+    // function myFunction() {
+    //     for (i = 1; i <= 4; i++) {
+    //         for (j = 1; j <= 5; j++) {
+    //             document.write("*" + " ");
+    //         }
+    //         document.write("<br>");
+    //     }
+    //     document.getElementsByClassName('show')[0].innerHTML = myFunction;
+    // }
+
+    // function clickBtn() {
+    //     for (i=1; i<=7; i++) {
+    //        for(j=1; j<=i; j++){
+    //         document.write("*"+" ")
+    //        }
+    //        document.write("<br>");
+    //     }
+    //     document.getElementById('btn').innerHTML = clickBtn;
+    // }
+</script>
+
+</html>

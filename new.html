@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String </title>
+    <style>
+        h1 {
+            color: darkblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .main {
+            margin-top: 30px;
+            padding: 10px;
+        }
+
+        .first,
+        .second {
+            background-color: orange;
+            width: 60vw;
+            margin: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .second {
+            margin-top: 20px;
+        }
+
+        input {
+            font-size: 20px;
+            width: 40vw;
+            padding: 10px;
+            border-radius: 10px;
+            outline: 1px grey;
+            border: none;
+            font-family: cursive;
+            margin: 10px;
+            caret-color: red;
+            color: darkblue;
+            background-color: rgba(128, 128, 128, 0.349);
+        }
+
+        input:focus {
+            box-shadow: 5px 5px 5px rgba(25, 25, 27, 0.701);
+        }
+
+        #btn {
+            background-color: rgb(13, 13, 90);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #btn:active {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        #clr-Btn {
+            width: 100px;
+            background-color: rgb(22, 85, 180);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #clr-Btn:active {
+            background-color: red;
+            color: white;
+        }
+
+        pre {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <center>
+            <pre>
+            Name : Akash S Pawar
+     Roll No: 2637
+        </pre>
+        </center>
+        <div class="first">
+            <h1>String Reversing and Counting</h1>
+            <input type="text" name="" id="string" onkeyup="reverseString()" placeholder="Enter text">
+            <input type="text" name="" id="dispStr" placeholder="Reversed text" readonly="">
+            <input type="text" name="" id="dispSt" placeholder="Count of String" readonly="">
+            <input type="button" name="" id="btn" value="Calulate" onclick="stringFuc()">
+            <input type="button" name="" id="clr-Btn" value="Clear" onclick="clearFuc()">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function reverseString() {
+        var str = document.getElementById("string").value;
+        var emptyStr = '';
+        for (var i = str.length - 1; i >= 0; i--) {
+            emptyStr += str[i];
+        }
+        document.getElementById("dispStr").value = emptyStr;
+    }
+
+    function stringFuc() {
+        var newStr = document.getElementById("string").value;
+        var strlength = newStr.length;
+        document.getElementById("dispSt").value = strlength;
+    }
+
+    function clearFuc() {
+        document.getElementById("string").value = "";
+        document.getElementById("dispStr").value = "";
+        document.getElementById("dispSt").value = "";
+
+    }
+
+</script>
+
+</html>
